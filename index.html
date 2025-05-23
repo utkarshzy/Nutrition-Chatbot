@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="messSelect">Select Mess:</label>
+          <select id="messSelect" class="form-control">
+            <option value="nonVegMess">Non-Veg Mess</option>
+            <option value="vegMess">Veg Mess</option>
+          </select>
+        </div>
+        <button type="button" onclick="login()">Login</button>
+      </form>
+    </div>
+    <script>
+      function login() {
+        const messType = document.getElementById("messSelect").value;
+        localStorage.setItem("messType", messType);
+        window.location.href = "meal.html";
+      }
+    </script>
+  </body>
+</html>
